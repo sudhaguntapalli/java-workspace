@@ -33,6 +33,7 @@ public class App
     	j = calculator.mul(4, 7);
     	System.out.println("mul: "+j);
     	
+    	System.out.println("The End");
     	
     }
 }
