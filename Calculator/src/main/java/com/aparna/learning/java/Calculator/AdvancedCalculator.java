@@ -7,11 +7,28 @@ public class AdvancedCalculator extends BasicCalculator implements AdvancedCalcu
 	}
 	
 	public double sqrt(int a) {
-		return Math.sqrt(a);
+		double x = 0;
+		try{
+			x =  Math.sqrt(a);
+		}
+		catch(Exception e){
+			System.out.print("Exception: "+e);
+		}
+		return x;
 	}
 
 	public double power(double a, double b) {
-		return Math.pow(a, b);
+		double x = 0;
+		try{
+			x =  Math.pow(a, b);
+		}
+		catch(Exception e){
+			System.out.print("Exception: "+e);
+		}
+		return x;
 	}
 
+	
+	
+	
 }

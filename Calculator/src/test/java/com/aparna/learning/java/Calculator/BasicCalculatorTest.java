@@ -9,7 +9,7 @@ import junit.framework.TestSuite;
 /**
  * Unit test for simple App.
  */
-public class AppTest 
+public class BasicCalculatorTest 
     extends TestCase
 {
 	BasicCalculator calculator;
@@ -18,7 +18,7 @@ public class AppTest
      *
      * @param testName name of the test case
      */
-    public AppTest( String testName )
+    public BasicCalculatorTest( String testName )
     {
         super( testName );
     }
@@ -28,7 +28,7 @@ public class AppTest
      */
     public static Test suite()
     {
-        return new TestSuite( AppTest.class );
+        return new TestSuite( BasicCalculatorTest.class );
     }
     
     public void setUp() throws Exception {
@@ -44,11 +44,15 @@ public class AppTest
      * Rigourous Test :-)
      */
     public void testAddTwoPositiveNumbers(){
+    	BasicCalculator cal = new BasicCalculator();
+    	cal.add(2, 1);
     	int c = calculator.add(4, 2);
     	assertTrue(c == 6);
     }
     
     public void testAddTwoNegativeNumbers(){
+    	BasicCalculator cal = new BasicCalculator();
+    	cal.add(-2, -1);
     	int c = calculator.add(-4, -2);
     	assertTrue(c == -6);
     }
