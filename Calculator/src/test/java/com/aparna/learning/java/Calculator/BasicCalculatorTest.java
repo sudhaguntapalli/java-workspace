@@ -151,6 +151,7 @@ public class BasicCalculatorTest {
     	try{
     		double g= calculator.div(4, -2);
     		assertTrue(g == -2);
+    		assertTrue(Double.isFinite(g));
     	}
     	catch(Exception e){
     		System.out.println("Exception: "+e);
@@ -160,24 +161,22 @@ public class BasicCalculatorTest {
     @Test
     public void testDivNegativeAndZeroNumbers(){
     	try{
-    		calculator.div(-4, 0);
-    		fail();
+    		double h = calculator.div(-4, 0);
+    		assertTrue(Double.isInfinite(h));
     	}
     	catch(Exception e){
     		System.out.println("Exception: "+e);
-    		assertEquals(e.getMessage(), "/ by zero");
     	}
     }
     
     @Test
     public void testDivPositiveAndZeroNumbers(){
     	try{
-    		calculator.div(4, 0);
-    		fail();
+    		double i = calculator.div(4.0, 0.0);
+    		assertTrue(Double.isInfinite(i));
     	}
     	catch(Exception e){
     		System.out.println("Exception: "+e);
-    		assertEquals(e.getMessage(), "/ by zero");
     	}
     }
 
