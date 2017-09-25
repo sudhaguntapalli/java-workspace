@@ -12,13 +12,13 @@ public class App
     {
     	try{
 	        BasicCalculator basicCalculator = new BasicCalculator();
-	        int c = basicCalculator.add(4, 2);
+	        double c = basicCalculator.add(4, 2);
 	        System.out.println("add: "+c);
-	        int d = basicCalculator.sub(4, 2);
+	        double d = basicCalculator.sub(4, 2);
 	        System.out.println("sub: "+d);
-	        int e = basicCalculator.mul(4, 2);
+	        double e = basicCalculator.mul(4, 2);
 	        System.out.println("mul: "+e);
-	        int f = basicCalculator.div(4, 2);
+	        double f = basicCalculator.div(4, 2);
 	        System.out.println("div: "+f);
 	        
 	        AdvancedCalculator advancedCalculator = new AdvancedCalculator();
@@ -26,11 +26,11 @@ public class App
 	    	System.out.println("sqrt: "+g);
 	    	double h= advancedCalculator.power(4, 2);
 	    	System.out.println("power: " +h);
-	    	int i = advancedCalculator.add(3, 2);
+	    	double i = advancedCalculator.add(3, 2);
 	    	System.out.println("add: "+i);
 	    	
 	    	FunnyBasicCalculator myCalculator = new FunnyBasicCalculator();
-	    	int j = myCalculator.mul(4, 7);
+	    	double j = myCalculator.mul(4, 7);
 	    	System.out.println("mul: "+j);
 	    	
 	    	j = basicCalculator.mul(4, 7);

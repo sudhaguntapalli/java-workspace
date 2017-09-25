@@ -1,131 +1,133 @@
 package com.aparna.learning.java.Calculator;
 
-import com.aparna.learning.java.Calculator.BasicCalculator;
+import static org.junit.Assert.*;
 
-import junit.framework.Test;
-import junit.framework.TestCase;
-import junit.framework.TestSuite;
+import org.junit.After;
+import org.junit.AfterClass;
+import org.junit.Before;
+import org.junit.BeforeClass;
+import org.junit.Test;
 
-/**
- * Unit test for simple App.
- */
-public class BasicCalculatorTest 
-    extends TestCase
-{
+public class BasicCalculatorTest {
 	BasicCalculator calculator;
-    /**
-     * Create the test case
-     *
-     * @param testName name of the test case
-     */
-    public BasicCalculatorTest( String testName )
-    {
-        super( testName );
-    }
+	
+	@BeforeClass
+	public static void setUpBeforeClass() throws Exception {
+	}
 
-    /**
-     * @return the suite of tests being tested
-     */
-    public static Test suite()
-    {
-        return new TestSuite( BasicCalculatorTest.class );
-    }
-    
-    public void setUp() throws Exception {
-      this.calculator = new BasicCalculator();
-    }
+	@AfterClass
+	public static void tearDownAfterClass() throws Exception {
+	}
 
-    public void tearDown() throws Exception {
-    	this.calculator = null;
-    }
+	@Before
+	public void setUp() throws Exception {
+		this.calculator = new BasicCalculator();
+	}
 
-
-    /**
-     * Rigourous Test :-)
-     */
-    public void testAddTwoPositiveNumbers(){
+	@After
+	public void tearDown() throws Exception {
+	}
+	
+	@Test
+	public void testAddTwoPositiveNumbers(){
     	BasicCalculator cal = new BasicCalculator();
     	cal.add(2, 1);
-    	int c = calculator.add(4, 2);
+    	double c = calculator.add(4, 2);
     	assertTrue(c == 6);
     }
     
+	@Test
     public void testAddTwoNegativeNumbers(){
     	BasicCalculator cal = new BasicCalculator();
     	cal.add(-2, -1);
-    	int c = calculator.add(-4, -2);
+    	double c = calculator.add(-4, -2);
     	assertTrue(c == -6);
     }
     
+    @Test
     public void testAddPostiveAndNegativeNumber(){
-    	int c = calculator.add(4, -2);
+    	double c = calculator.add(4, -2);
     	assertTrue(c == 2);
 	}
     
+    @Test
     public void testAddPositiveAndZero(){
-    	int c = calculator.add(4, 0);
+    	double c = calculator.add(4, 0);
     	assertTrue(c == 4);
     }
     
+    @Test
     public void testAddZeroAndPositiveNumber(){
-    	int c = calculator.add(0, 4);
+    	double c = calculator.add(0, 4);
     	assertTrue(c == 4);
     }
     
+    @Test
     public void testSubTwoPosiiveNumbers1(){
-    	int d= calculator.sub(4, 2);
+    	double d= calculator.sub(4, 2);
     	assertTrue(d == 2);
     	
     }
     
+    @Test
     public void testSubTwoNegativeNumbers(){
-    	int d = calculator.sub(-4, -2);
+    	double d = calculator.sub(-4, -2);
     	assertTrue(d == -2);
     }
     
+    @Test
     public void testSubPostiveAndNegativeNumbers(){
-    	int d = calculator.sub(4, -2);
+    	double d = calculator.sub(4, -2);
     	assertTrue(d == 6);
     }
     
+    @Test
     public void testSubNegativeAndzero(){
-    	int d = calculator.sub(-4, 0);
+    	double d = calculator.sub(-4, 0);
     	assertTrue(d == -4);
     }
     
+    @Test
     public void testSubPositiveAndzero(){
-    	int d = calculator.sub(4, 0);
+    	double d = calculator.sub(4, 0);
     	assertTrue(d == 4);
     }
     
+    @Test
     public void testMulTwoPosiiveNumbers(){
-    	int f= calculator.mul(4, 2);
+    	double f= calculator.mul(4, 2);
     	assertTrue(f == 8);
     	
     }
     
+    @Test
     public void testMulTwoNegativeNumbers(){
-    	int f = calculator.mul(-4, -2);
+    	double f = calculator.mul(-4, -2);
     	assertTrue(f == 8);
     }
     
+    @Test
     public void testMulPostiveAndNegativeNumbers(){
-    	int f = calculator.mul(4, -2);
+    	double f = calculator.mul(4, -2);
     	assertTrue(f == -8);
     }
     
+    @Test
     public void testMulNegativeAndZero(){
-    	int f = calculator.mul(-4, 0);
+    	double f = calculator.mul(-4, 0);
     	assertTrue(f == 0);
     }
     
+    @Test
     public void testMulPositiveAndZero(){
-    	int f = calculator.mul(4, 0);
+    	double f = calculator.mul(4, 0);
     	assertTrue(f == 0);
     }
+    
+    @Test
     public void testDivTwoPosiiveNumbers(){
     	try{
-    		int g= calculator.div(4, 2);
+    		double g= calculator.div(4, 2);
     		assertTrue(g == 2);
     	}
     	catch(Exception e){
@@ -133,9 +135,10 @@ public class BasicCalculatorTest
     	}
     }
     
+    @Test
     public void testDivTwoNegativeNumbers(){
     	try{
-    		int g= calculator.div(-4, -2);
+    		double g= calculator.div(-4, -2);
     		assertTrue(g == 2);
     	}
     	catch(Exception e){
@@ -143,9 +146,10 @@ public class BasicCalculatorTest
     	}
     }
     
+    @Test
     public void testDivPostiveAndNegativeNumbers(){
     	try{
-    		int g= calculator.div(4, -2);
+    		double g= calculator.div(4, -2);
     		assertTrue(g == -2);
     	}
     	catch(Exception e){
@@ -153,9 +157,10 @@ public class BasicCalculatorTest
     	}
     }
     
+    @Test
     public void testDivNegativeAndZeroNumbers(){
     	try{
-    		int g= calculator.div(-4, 0);
+    		calculator.div(-4, 0);
     		fail();
     	}
     	catch(Exception e){
@@ -164,9 +169,10 @@ public class BasicCalculatorTest
     	}
     }
     
+    @Test
     public void testDivPositiveAndZeroNumbers(){
     	try{
-    		int g= calculator.div(4, 0);
+    		calculator.div(4, 0);
     		fail();
     	}
     	catch(Exception e){
@@ -174,4 +180,5 @@ public class BasicCalculatorTest
     		assertEquals(e.getMessage(), "/ by zero");
     	}
     }
+
 }

@@ -8,8 +8,8 @@ public class BasicCalculator implements CalculatorInterface {
 		
 	}
 
-	public int add(int a, int b) {
-		int c = 0;
+	public double add(double a, double b) {
+		double c = 0;
 		try{
 			c =  a + b;
 		}
@@ -19,8 +19,8 @@ public class BasicCalculator implements CalculatorInterface {
 		return c;
 	}
 
-	public int sub(int a, int b) {
-		int d = 0;
+	public double sub(double a, double b) {
+		double d = 0;
 		try{
 			d = a - b;
 		}
@@ -31,8 +31,8 @@ public class BasicCalculator implements CalculatorInterface {
 	}	
 	
 
-	public int mul(int a, int b) {
-		int f = 0;
+	public double mul(double a, double b) {
+		double f = 0;
 		try{
 			f = a * b;
 		}
@@ -42,8 +42,8 @@ public class BasicCalculator implements CalculatorInterface {
 		return f;
 	}
 
-	public int div(int a, int b) throws Exception {
-		int g = 0;
+	public double div(double a, double b) throws Exception {
+		double g = 0;
 		try{
 			g = a / b;
 		}
